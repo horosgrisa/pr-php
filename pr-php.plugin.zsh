@@ -15,7 +15,8 @@ pr_php=""
 _pr_php() {
   
   if (( $+commands[php] )); then
-    if is-recursive-exist composer.json || is-recursive-exist index.php >/dev/null ; then
+    if is-recursive-exist composer.json >/dev/null \
+    || is-recursive-exist index.php >/dev/null ; then
       pr_php="$PHP_PREFIX"
       
       php_version=$(
