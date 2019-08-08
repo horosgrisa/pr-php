@@ -22,11 +22,7 @@ _pr_php() {
       php_version=$(
         php --version | sed 1q | awk '{print $2}' | awk -F'-' '{print $1}'
       )
-      if [[ $CLICOLOR = 1 ]]; then
-        pr_php+="%{$c[magenta]${c_bold}%}𝗛%{$c_reset%} %{$c[blue]$c_bold%}$php_version%{$c_reset%}"
-      else
-        pr_php+="𝗛 $php_version"
-      fi
+      pr_php+="%{$c[magenta]${c_bold}%}𝗛%{$c_reset%} %{$c[blue]$c_bold%}$php_version%{$c_reset%}"
       
       pr_php+="$PHP_SUFIX"
       return 0
