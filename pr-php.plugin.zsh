@@ -6,7 +6,7 @@ PHP_PREFIX=${PHP_PREFIX:-" "}
 PHP_SUFIX=${PHP_SUFIX:-""}
 
 
-if (( $+function[zpm] )); then
+if (( $+functions[zpm] )); then
   zpm zpm-zsh/helpers zpm-zsh/colors
 fi
 
