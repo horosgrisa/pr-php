@@ -7,7 +7,7 @@ PHP_SUFIX=${PHP_SUFIX:-""}
 
 
 if (( $+functions[zpm] )); then
-  zpm zpm-zsh/helpers zpm-zsh/colors
+  zpm zpm-zsh/helpers,inline zpm-zsh/colors,inline
 fi
 
 pr_php=""
