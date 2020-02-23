@@ -10,9 +10,11 @@ if (( $+functions[zpm] )); then
   zpm zpm-zsh/helpers,inline zpm-zsh/colors,inline
 fi
 
+typeset -g pr_php
 pr_php=""
 
 _pr_php() {
+  local php_version
   if (( $+commands[php] )); then
     if is-recursive-exist composer.json >/dev/null \
     || is-recursive-exist index.php >/dev/null ; then
