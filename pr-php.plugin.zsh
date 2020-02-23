@@ -2,7 +2,9 @@
 
 DEPENDENCES_ZSH+=( zpm-zsh/helpers zpm-zsh/colors )
 
+typeset -g PHP_PREFIX
 PHP_PREFIX=${PHP_PREFIX:-" "}
+typeset -g PHP_SUFIX
 PHP_SUFIX=${PHP_SUFIX:-""}
 
 
