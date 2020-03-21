@@ -4,15 +4,15 @@ typeset -g PHP_PREFIX=${PHP_PREFIX:-" "}
 typeset -g PHP_SUFIX=${PHP_SUFIX:-""}
 typeset -g pr_php=""
 
-if (( $+functions[zpm] )); then
-  zpm zpm-zsh/helpers zpm-zsh/colors
-fi
+if (( $+functions[zpm] )); then #DO_NOT_INCLUDE_LINE_IN_ZPM_CACHE
+  zpm zpm-zsh/helpers zpm-zsh/colors #DO_NOT_INCLUDE_LINE_IN_ZPM_CACHE
+fi #DO_NOT_INCLUDE_LINE_IN_ZPM_CACHE
 
 if (( $+commands[php] )); then
   function _pr_php() {
     pr_php=""
 
-    if is-recursive-exist composer.json >/dev/null || is-recursive-exist index.php >/dev/null; then
+    if is-recursive-exist composer.json || is-recursive-exist index.php; then
       local -a lines=( ${(f)"$(command php --version)"} )
       local -a arr_mod=("${(@s/ /)lines[1]}")
       local php_version=$arr_mod[2]
