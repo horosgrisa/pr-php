@@ -1,12 +1,9 @@
 #!/usr/bin/env zsh
 
-typeset -g PHP_PREFIX=${PHP_PREFIX:-" "}
-typeset -g PHP_SUFIX=${PHP_SUFIX:-""}
-typeset -g pr_php=""
+: ${PHP_PREFIX:=" "}
+: ${PHP_SUFIX:=""}
 
-if (( $+functions[zpm] )); then #DO_NOT_INCLUDE_LINE_IN_ZPM_CACHE
-  zpm zpm-zsh/helpers zpm-zsh/colors #DO_NOT_INCLUDE_LINE_IN_ZPM_CACHE
-fi #DO_NOT_INCLUDE_LINE_IN_ZPM_CACHE
+typeset -g pr_php=""
 
 if (( $+commands[php] )); then
   function _pr_php() {
