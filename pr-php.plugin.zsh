@@ -14,7 +14,7 @@ if (( $+commands[php] )); then
       local -a arr_mod=("${(@s/ /)lines[1]}")
       local php_version=$arr_mod[2]
 
-      pr_php="${PHP_PREFIX}%{$c[magenta]${c_bold}%}𝗛%{$c_reset%} %{$c[blue]$c_bold%}$php_version%{$c_reset%}${PHP_SUFIX}"
+      pr_php="${PHP_PREFIX}%{${c[magenta]}${c[bold]}%}𝗛%{${c[reset]}%} %{${c[blue]}${c[bold]}%}$php_version%{${c[reset]}%}${PHP_SUFIX}"
     fi
   }
 
