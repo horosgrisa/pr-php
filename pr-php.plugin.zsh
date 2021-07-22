@@ -9,7 +9,7 @@ if (( $+commands[php] )); then
   function _pr_php() {
     pr_php=""
 
-    if is-recursive-exist composer.json || is-recursive-exist index.php; then
+    if is-recursive-exist composer.json index.php; then
       local -a lines=( ${(f)"$(command php --version)"} )
       local -a arr_mod=("${(@s/ /)lines[1]}")
       local php_version=$arr_mod[2]
