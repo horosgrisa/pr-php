@@ -1,8 +1,5 @@
 #!/usr/bin/env zsh
 
-: ${PHP_PREFIX:=" "}
-: ${PHP_SUFIX:=""}
-
 typeset -g pr_php=""
 
 if (( $+commands[php] )); then
@@ -14,7 +11,7 @@ if (( $+commands[php] )); then
       local -a arr_mod=("${(@s/ /)lines[1]}")
       local php_version=$arr_mod[2]
 
-      pr_php="${PHP_PREFIX}%{${c[magenta]}${c[bold]}%}PHP%{${c[yellow]}%}:%{${c[blue]}%}$php_version%{${c[reset]}%}${PHP_SUFIX}"
+      pr_php=" %{${c[magenta]}${c[bold]}%}PHP%{${c[yellow]}%}:%{${c[blue]}%}$php_version%{${c[reset]}%}"
     fi
   }
 
